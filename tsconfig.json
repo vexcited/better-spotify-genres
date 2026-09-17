@@ -1,24 +1,25 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES2020",
-    "moduleResolution": "Node",
-    
-    "types": [
-      "./src/spicetify.d.ts"
-    ],
-    
-    "rootDir": "./src",
-    "noEmit": true,
-    
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    
-    "strict": true,
-    "skipLibCheck": true
-  },
-
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+	"compilerOptions": {
+		"target": "ES2022",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"allowImportingTsExtensions": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"lib": ["ES2024", "ESNext.Disposable", "DOM", "DOM.Iterable"],
+		"strict": false,
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		"types": [],
+		"paths": {
+			"/modules/*": ["./node_modules/@spicetify/kit/vendor/*"]
+		}
+	},
+	"include": ["**/*"],
+	"files": [
+		"./node_modules/@spicetify/kit/vendor/shims/remote-modules.d.ts",
+		"./node_modules/@spicetify/kit/vendor/shims/chunks.d.ts",
+		"./node_modules/@spicetify/kit/vendor/shims/spicetify.d.ts"
+	],
+	"exclude": ["node_modules", "dist"]
 }

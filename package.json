@@ -1,27 +1,33 @@
 {
-  "name": "better-spotify-genres",
-  "description": "See what genres you are listening to.",
-  "author": "Mikkel RINGAUD (https://github.com/Vexcited) <mikkel@milescode.dev>",
-  "license": "MIT",
-  "homepage": "https://github.com/Vexcited/better-spotify-genres",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Vexcited/better-spotify-genres.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Vexcited/better-spotify-genres/issues"
-  },
-  "scripts": {
-    "lint": "tsc",
-    "build": "tsup && move-cli ./dist/spotifyGenres.global.js ./dist/spotifyGenres.js",
-    "move:windows": "powershell Move-Item -Force -Path .\\dist\\spotifyGenres.js -Destination $env:USERPROFILE\\AppData\\Roaming\\spicetify\\Extensions\\spotifyGenres.js",
-    "move:macos": "mv ./dist/spotifyGenres.js ~/.config/spicetify/Extensions"
-  },
-  "devDependencies": {
-    "eslint": "^8.57.1",
-    "move-cli": "^2.0.0",
-    "terser": "^5.39.0",
-    "tsup": "^8.4.0",
-    "typescript": "^5.8.3"
-  }
+	"name": "better-spotify-genres",
+	"description": "See what genres you are listening to.",
+	"author": "Mikkel RINGAUD (https://github.com/Vexcited) <mikkel@milescode.dev>",
+	"license": "MIT",
+	"homepage": "https://github.com/Vexcited/better-spotify-genres",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Vexcited/better-spotify-genres.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Vexcited/better-spotify-genres/issues"
+	},
+	"private": true,
+	"type": "module",
+	"engines": {
+		"node": ">=22.6"
+	},
+	"scripts": {
+		"build": "spicetify-kit build .",
+		"dev": "spicetify-kit dev .",
+		"check": "tsc && spicetify-kit check .",
+		"test": "node --test \"test/*.test.mts\""
+	},
+	"devDependencies": {
+		"@spicetify/kit": "^0.3.1",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"happy-dom": "^20",
+		"rxjs": "^7.8.1",
+		"typescript": "^7"
+	}
 }

@@ -1,0 +1,27 @@
+{
+	"name": "better-spotify-genres",
+	"kind": "extension",
+	"version": "0.1.0",
+	"authors": ["Vexcited", "Tetrax-10", "Golevka2001"],
+	"description": "Show the genres of the currently playing track in the player bar, with a click-through to the matching 'The Sound of Spotify' playlist.",
+	"entries": {
+		"js": "index.js",
+		"css": "index.css"
+	},
+	"hasMixins": false,
+	"dependencies": {
+		"stdlib": "^1.10.4"
+	},
+	"stdlibBoundary": {
+		"exceptions": [
+			{
+				"file": "mod.tsx",
+				"rules": ["client-dom"],
+				"reason": "Genres text embeds directly into Spotify's own now-playing track-info container; there is no classmap path for it (main.playbar.widget.info is unpopulated in current classmaps)."
+			}
+		]
+	},
+	"preview": "https://raw.githubusercontent.com/Vexcited/better-spotify-genres/main/.github/currently-playing.png",
+	"repository": "https://github.com/Vexcited/better-spotify-genres",
+	"license": "MIT"
+}

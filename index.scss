@@ -1,0 +1,27 @@
+.spicetify-genres {
+	grid-area: genres;
+	font-size: 12px;
+	color: var(--spice-subtext);
+	white-space: nowrap;
+	overflow: hidden;
+
+	.spicetify-genres-track {
+		display: inline-block;
+		white-space: nowrap;
+		will-change: transform;
+	}
+
+	.spicetify-genres-item {
+		color: var(--spice-subtext);
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover {
+			color: var(--spice-text);
+		}
+	}
+
+	.spicetify-genres-track > span {
+		margin: 0 2px;
+	}
+}
